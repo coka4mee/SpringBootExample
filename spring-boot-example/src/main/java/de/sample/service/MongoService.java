@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 /**
  * Created by jonaslanzendorfer on 03.12.15.
@@ -21,8 +22,9 @@ public class MongoService {
     }
 
     public void fillCustomerRepository(){
-        repository.save(new Customer("Alice", "Smith"));
-        repository.save(new Customer("Bob", "Smith"));
+        Random randomGenerator = new Random();
+        repository.save(new Customer("Alice"+randomGenerator.nextInt(100), "Smith"));
+        repository.save(new Customer("Bob"+randomGenerator.nextInt(100), "Smith"));
     }
 
     public List<String> listCustomer(){
