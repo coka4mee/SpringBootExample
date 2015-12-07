@@ -1,7 +1,5 @@
 package de.sample.controller;
 
-import de.sample.service.MongoService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.*;
 import org.springframework.boot.autoconfigure.*;
 import org.springframework.stereotype.*;
@@ -21,4 +19,7 @@ public class HelloController {
         return mongoService.listCustomer().toString();
     }
 
+    public static void main(String[] args) throws Exception {
+        SpringApplication.run(HelloController.class, args);
+    }
 }
